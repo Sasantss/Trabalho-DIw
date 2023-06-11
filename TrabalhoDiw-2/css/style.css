@@ -1,0 +1,576 @@
+.logo {
+  width: 150px;
+}
+.carousel-item {
+  width: 100%;
+}
+.btn-pink {
+  background-color: #d90576;
+  color: white;
+}
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);
+
+:root {
+  --black: #130f0d;
+  --primary: hsl(32, 98%, 56%);
+  --white: #f0f0f9;
+}
+.card-body {
+  padding: 6rem;
+  height: 100px;
+}
+.card-text {
+  font-size: 10px;
+}
+.card-title {
+  font-size: 13px;
+}
+
+.btn.btn-compra:hover {
+  background-color: hotpink;
+}
+
+.btn-compra:active .btn-compra:focus {
+  background-color: rgb(227, 13, 49);
+}
+
+.btn.btn-compra {
+  background-color: rgb(227, 13, 49);
+  color: rgb(255, 98, 98);
+  width: 15%; /* Defina a largura desejada para o botão */
+  height: 10%;
+  margin-top: -38px; /* Adicione um espaçamento superior para separar do preço */
+  margin-bottom: 10px;
+  position: absolute;
+  right: 10px;
+  transition: background-color 0.3s;
+  border: 2px solid pink;
+}
+
+.card-img-top {
+  width: 200px; /* Defina o tamanho desejado para a largura */
+  height: 300px; /* Defina o tamanho desejado para a altura */
+  object-fit: cover; /* Para manter a proporção da imagem */
+  object-position: center; /* Para centralizar a imagem */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+button,
+input {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  height: 100vh;
+
+  background-color: var(--black);
+  color: var(--white);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+
+  background-color: hsl(32, 89%, 8%);
+
+  /*         box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.2); */
+  padding: 16px;
+}
+/* Estilo personalizado para o card */
+.card {
+  transition: box-shadow 0.5s; /* Adicione uma transição suave para a sombra */
+}
+
+/* Estilo personalizado para o card quando o mouse passa por cima */
+.card:hover {
+  box-shadow: 0 8px 20px rgba(5, 0, 0, 0.313); /* Defina o tamanho e a cor da sombra desejados */
+}
+#paginate {
+  width: 100%;
+
+  margin: 32px auto;
+}
+
+#paginate .item {
+  border-bottom: 1px solid hsl(32, 98%, 12%);
+  padding: 16px 32px;
+}
+
+#paginate .item:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+#paginate .controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 8px;
+}
+
+#paginate .controls div {
+  cursor: pointer;
+
+  /* border: 1px solid #eee; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14;
+}
+
+#paginate .controls div:not(.numbers),
+#paginate .controls div.numbers div {
+  width: 40px;
+  height: 40px;
+}
+
+#paginate .controls div.numbers div:hover,
+#paginate .controls div.numbers div.active {
+  color: var(--primary);
+}
+body {
+  background-color: #eeeeee;
+}
+
+.container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.card-product-list,
+.card-product-grid {
+  margin-bottom: 0;
+}
+
+.card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.1rem;
+  margin-top: 10px;
+}
+
+.card-product-grid:hover {
+  -webkit-box-shadow: 0 4px 15px rgba(249, 57, 211, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 2, 171, 0.3);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.card-product-grid .img-wrap {
+  border-radius: 0.2rem 0.2rem 0 0;
+  height: 220px;
+}
+
+.card .img-wrap {
+  overflow: hidden;
+}
+
+.card-lg .img-wrap {
+  height: 280px;
+}
+
+.card-product-grid .img-wrap {
+  border-radius: 0.2rem 0.2rem 0 0;
+  height: 228px;
+  padding: 16px;
+}
+
+[class*="card-product"] .img-wrap img {
+  height: 100%;
+  max-width: 100%;
+  width: auto;
+  display: inline-block;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.img-wrap {
+  text-align: center;
+  display: block;
+}
+
+.card-product-grid .info-wrap {
+  overflow: hidden;
+  padding: 18px 20px;
+}
+
+[class*="card-product"] a.title {
+  color: #212529;
+  display: block;
+}
+
+.rating-stars {
+  display: inline-block;
+  vertical-align: middle;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  white-space: nowrap;
+  clear: both;
+}
+
+.rating-stars li.stars-active {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.rating-stars li {
+  display: block;
+  text-overflow: clip;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.card-product-grid .bottom-wrap {
+  padding: 18px;
+  border-top: 1px solid #e4e4e4;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  color: #343a40;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.45rem 0.85rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #fc59ec;
+  border-color: #c406de;
+}
+
+.fa {
+  color: #e8fb19;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Montserrat:wght@300;500&family=Schibsted+Grotesk:ital,wght@1,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+}
+
+.icons {
+  color: black;
+  width: 25px;
+}
+
+.container-c {
+  flex-direction: row;
+}
+
+.logo-header {
+  width: 85px;
+}
+
+#imgs {
+  width: 50px;
+}
+
+.nav-item {
+  font-size: 15px;
+}
+
+#navbarContent {
+  justify-content: flex-end;
+  height: 25px;
+}
+
+.msg-main {
+  font-family: "Schibsted Grotesk", sans-serif;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.card-img {
+  width: 35px;
+}
+
+.card-header mt-2.card-header {
+  font-family: "Inter", sans-serif;
+}
+
+.card-title {
+  font-family: "Montserrat", sans-serif;
+}
+
+.row.area-inscr.formulario {
+  justify-content: center;
+  font-size: 10px;
+}
+
+/* .btn-submit{
+  border-radius:px;
+} 
+ */
+
+/* Rodapé */
+.marca-icons {
+  width: 25px;
+  align-items: baseline;
+  align-content: space-around;
+}
+
+.marca-icons-pag {
+  text-align: center;
+  margin: auto;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  width: 45px;
+  justify-content: space-evenly;
+  align-items: baseline;
+  align-content: space-around;
+}
+
+.marca-icons-cont {
+  width: 22px;
+  align-items: baseline;
+  align-content: space-around;
+}
+
+.navbar-fixed-bottom {
+  height: 55px;
+}
+
+.barra-lateral {
+  border-radius: 15%;
+}
+
+#barra-lateral {
+  border-radius: 155%;
+}
+.container .bg-light {
+  background-color: #d693b6;
+  position: relative;
+  margin-left: -8px;
+  right: 35px;
+  top: -50px;
+  width: 320px;
+  height: 400px;
+}
+.navbar {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+.navbar .navbar-brand img {
+  max-width: 100px;
+}
+.navbar .navbar-nav .nav-link {
+  color: #000;
+}
+@media screen and (min-width: 1024px) {
+  .navbar {
+    letter-spacing: 0.1em;
+  }
+  .navbar .navbar-nav .nav-link {
+    padding: 0.5em 1em;
+  }
+  .search-and-icons {
+    width: 50%;
+  }
+  .search-and-icons form {
+    flex: 1;
+  }
+}
+@media screen and (min-width: 768px) {
+  .navbar .navbar-brand img {
+    max-width: 7em;
+  }
+  .navbar .navbar-collapse {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+  .search-and-icons {
+    display: flex;
+    align-items: center;
+  }
+}
+.search-and-icons form input {
+  border-radius: 0;
+  height: 2em;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='grey' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E")
+    no-repeat 95%;
+}
+.search-and-icons form input:focus {
+  background: #fff;
+  box-shadow: none;
+}
+.search-and-icons .user-icons div {
+  padding-right: 1em;
+}
+.contact-info p,
+.contact-info a {
+  font-size: 0.9em;
+  padding-right: 1em;
+  color: grey;
+}
+.contact-info a {
+  padding-right: 0;
+}
+
+.product-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.side-section {
+  flex-basis: 10%;
+}
+
+.main-section {
+  flex-basis: 40%;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 255px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  background-color: white;
+  padding-bottom: 1%;
+}
+
+.product-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.product-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.product-description {
+  font-size: 0.875rem;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.product-price {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: orange;
+}
+
+.add-to-cart-button {
+  padding: 10px 20px;
+  background-color: orange;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.add-to-cart-button:hover {
+  background-color: darkorange;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: lightgray;
+  font-size: 0.875rem;
+}
+
+.discount-price {
+  color: orange;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.border {
+  position: absolute;
+  top: 1px;
+  right: 30px;
+  border-radius: 10px;
+  background-color: #ece1e8;
+}
+.form-group {
+  position: relative;
+  bottom: -60px;
+}
+
+.justify-content-center {
+  position: relative;
+  bottom: -50px;
+}
+#buttonCategory {
+  position: relative;
+  left: 28px;
+}
+.container-fluid-c {
+  width: 900px;
+  height: 500px;
+}
+
+.img {
+  width: 100px;
+  height: 400px;
+}

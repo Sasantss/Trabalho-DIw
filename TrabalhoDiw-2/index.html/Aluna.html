@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aluna</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+    .logo {
+      width: 150px;
+    }
+
+    body {
+      background: #eee;
+    }
+
+    .card {
+      border: none;
+
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .card:before {
+
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background-color: #ec91cf;
+      transform: scaleY(1);
+      transition: all 0.5s;
+      transform-origin: bottom
+    }
+
+    .card:after {
+
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background-color: #d90576;
+      transform: scaleY(0);
+      transition: all 0.5s;
+      transform-origin: bottom
+    }
+
+    .card:hover::after {
+      transform: scaleY(1);
+    }
+
+
+    .fonts {
+      font-size: 11px;
+    }
+
+    .social-list {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .social-list li {
+      padding: 10px;
+      color: #d90576;
+      font-size: 19px;
+    }
+
+
+    .buttons button:nth-child(1) {
+      border: 1px solid #d90576 !important;
+      color: #d90576;
+      height: 40px;
+    }
+
+    .buttons button:nth-child(1):hover {
+      border: 1px solid #ea047f !important;
+      color: #fff;
+      height: 40px;
+      background-color: #d90576;
+    }
+
+    .buttons button:nth-child(2) {
+      border: 1px solid #d90576 !important;
+      background-color: #d90576;
+      color: #fff;
+      height: 40px;
+    }
+
+    .container {
+
+      margin-bottom: 100px;
+    }
+
+    .btn-pink {
+      background-color: #d90576;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="index.html">
+      <img class="logo" src="/img/logo.png" alt="">
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Produtos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contato</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Aluna</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-pink my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+
+    <div class="row d-flex justify-content-center">
+
+      <div class="col-md-7">
+
+        <div class="card p-3 py-4">
+
+          <div class="text-center">
+            <img src="/img/sa.jpeg" width="100" class="rounded-circle">
+          </div>
+
+          <div class="text-center mt-3">
+            <span class="bg-secondary p-1 px-4 rounded text-white">819700</span>
+            <h5 class="mt-2 mb-0">Sabrina Santiago de Oliveira</h5>
+            <span>Sistemas de Informação- Puc Minas</span>
+
+            <div class="px-4 mt-1">
+              <p class="fonts">Sistemas de informação
+              <br>Número de matricula destacado acima
+              </p>
+
+            </div>
+
+            <ul class="social-list">
+              <li><i class="fa fa-facebook"></i></li>
+              <li><i class="fa fa-dribbble"></i></li>
+              <li><i class="fa fa-instagram"></i></li>
+              <li><i class="fa fa-linkedin"></i></li>
+              <li><i class="fa fa-google"></i></li>
+            </ul>
+
+            <div class="buttons">
+
+              <button class="btn btn-outline-primary px-4">Message</button>
+              <button class="btn btn-primary px-4 ms-3">Contact</button>
+            </div>
+
+
+          </div>
+
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <footer class="bg-light">
+    <div class="container-fluid" style="border: 1px solid rgb(242, 239, 239);">
+      <div class="row">
+        <div class="col">
+          <div class="row"><b> Payment Methods</b></div>
+          <div class="row">
+            <i class="fa-brands fa-cc-mastercard fa-2x ml-2"></i>
+            <i class="fa-brands fa-cc-discover fa-2x ml-2"></i>
+            <i class="fa-brands fa-cc-visa fa-2x ml-2" style="color: #773c71;"></i>
+          </div>
+          <div class="row"></div>
+          <div class="row">
+            <i class="fa-brands fa-cc-paypal fa-2x ml-2" style="color: #536c97;"></i>
+            <i class="fa-regular fa-money-bill fa-2x ml-2"></i>
+            <i class="fa-brands fa-pix fa-2x ml-2"></i>
+          </div>
+        </div>
+        <div class="col">
+          <b>Quick Links</b>
+          <div class="row">
+            <li><a href="https://www.exemplo.com">Link 1</a></li>
+          </div>
+          <div class="row">
+            <li><a href="https://www.exemplo.com">Link 1</a></li>
+          </div>
+          <div class="row">
+            <li><a href="https://www.exemplo.com">Link 1</a></li>
+          </div>
+          <div class="row">
+            <li><a href="https://www.exemplo.com">Link 1</a></li>
+          </div>
+        </div>
+        <div class="col"><b>Lets be social</b>
+          <div class="row">
+            <i class="fa-brands fa-instagram fa-2x ml-2" style="color: #ef25e8;"></i>
+            <i class="fa-brands fa-facebook fa-2x ml-2"></i>
+            <i class="fa-sharp fa-solid fa-at fa-2x ml-2" style="color: #4180d2;"></i>
+          </div>
+        </div>
+        <div class="col"><b>Contact us</b>
+          <div class="row">
+            <i class="fa-regular fa-envelope fa-2x ml-1" style="color: #6e93d4;"></i>
+            sabrinasantiagob@gmail.com
+          </div>
+          <div class="row">
+            <i class="fa-brands fa-whatsapp fa-2x ml-1"></i>
+            3199999923933
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

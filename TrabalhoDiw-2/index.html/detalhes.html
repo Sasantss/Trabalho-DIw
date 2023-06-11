@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Detalhes do Produto</title>
+  <!-- Inclua os links para os arquivos Bootstrap e jQuery -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <style>
+    body {
+      background-color: #e3cfe2;
+    }
+
+    .container {
+      margin-top: 50px;
+      width: 800px;
+      text-align: center;
+      /* Alinhar o título ao centro */
+      color: #dc3545;
+      background-color: #ffffff;
+      margin-bottom: 50px;
+    }
+
+    .detalhes-produto {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      text-align: center;
+      /* Alinhar o título ao centro */
+    }
+
+    .detalhes-imagem {
+      width: 200px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .detalhes-titulo {
+      font-size: 21px;
+      color: #dc3545;
+      margin-bottom: 10px;
+      text-align: center;
+      /* Alinhar o título ao centro */
+    }
+
+    .detalhes-descricao {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .detalhes-preco {
+      font-size: 16px;
+      color: #dc3545;
+      font-weight: bold;
+    }
+
+    .logo {
+      width: 150px;
+    }
+
+    .btn-pink {
+      background-color: #d90576;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="index.html">
+      <img class="logo" src="/img/logo.png" alt="">
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Produtos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contato</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Aluna.html">Aluna</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-pink my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Detalhes do Produto</h1>
+    <div id="detalhes-produto"></div>
+  </div>
+
+  <script>
+    // Obtenha o ID do produto da URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var produtoId = urlParams.get('id');
+
+    // Chamar a API externa para obter os detalhes do produto específico
+    fetch('http://diwserver.vps.webdock.cloud:8765/products/' + produtoId)
+      .then(response => response.json())
+      .then(produto => {
+        // Exibir os detalhes do produto
+        var detalhesProduto = $('<div>').addClass('detalhes-produto');
+        var detalhesCardBody = $('<div>').addClass('card-body');
+
+        var detalhesImagem = $('<img>').addClass('detalhes-imagem').attr('src', produto.image).attr('alt', produto.title);
+        detalhesCardBody.append(detalhesImagem);
+
+        var detalhesTitulo = $('<h5>').addClass('detalhes-titulo').text(produto.title);
+        detalhesCardBody.append(detalhesTitulo);
+
+        var detalhesDescricao = $('<p>').addClass('detalhes-descricao').html(produto.description);
+        detalhesCardBody.append(detalhesDescricao);
+
+        var detalhesPreco = $('<p>').addClass('detalhes-preco').text('Preço: R$ ' + produto.price.toFixed(2));
+        detalhesCardBody.append(detalhesPreco);
+
+        detalhesProduto.append(detalhesCardBody);
+        $('#detalhes-produto').append(detalhesProduto);
+
+        var botaoCompra = $('<button>').addClass('btn btn-pink').text('Comprar');
+        detalhesCardBody.append(botaoCompra);
+      })
+
+      .catch(error => {
+        console.error('Erro ao obter os detalhes do produto da API:', error);
+      });
+  </script>
+  <footer class="bg-light">
+    <div class="container-fluid" style="border: 1px solid rgb(242, 239, 239);">
+      <div class="row">
+        <div class="col">
+          <div class="row"><b> Payment Methods</b></div>
+          <div class="row">
+            <i class="fa-brands fa-cc-mastercard fa-2x ml-2"></i>
+            <i class="fa-brands fa-cc-discover fa-2x ml-2"></i>
+            <i class="fa-brands fa-cc-visa fa-2x ml-2" style="color: #3c5177;"></i>
+          </div>
+          <div class="row"></div>
+          <div class="row">
+            <i class="fa-brands fa-cc-paypal fa-2x ml-2" style="color: #536c97;"></i>
+            <i class="fa-regular fa-money-bill fa-2x ml-2"></i>
+            <i class="fa-brands fa-pix fa-2x ml-2"></i>
+          </div>
+        </div>
+        <div class="col">
+          <b>Quick Links</b>
+          <div class="row">
+            <li><a href="https://www.exemplo.com">Link 1</a></li>
+          </div>
+          <div class="row">
+            <li><a href="https://www.exemplo.com">Link 1</a></li>
+          </div>
+          <div class="row">
+            <li><a href="https://www.exemplo.com">Link 1</a></li>
+          </div>
+          <div class="row">
+            <li><a href="https://www.exemplo.com">Link 1</a></li>
+          </div>
+        </div>
+        <div class="col"><b>Lets be social</b>
+          <div class="row">
+            <i class="fa-brands fa-instagram fa-2x ml-2" style="color: #ef25e8;"></i>
+            <i class="fa-brands fa-facebook fa-2x ml-2"></i>
+            <i class="fa-sharp fa-solid fa-at fa-2x ml-2" style="color: #4180d2;"></i>
+          </div>
+        </div>
+        <div class="col"><b>Contact us</b>
+          <div class="row">
+            <i class="fa-regular fa-envelope fa-2x ml-1" style="color: #6e93d4;"></i>
+            sabrinasantiagob@gmail.com
+          </div>
+          <div class="row">
+            <i class="fa-brands fa-whatsapp fa-2x ml-1"></i>
+            3199999923933
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
